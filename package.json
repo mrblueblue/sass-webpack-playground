@@ -1,0 +1,40 @@
+{
+  "name": "sass-playground",
+  "version": "1.0.0",
+  "description": "playing with sass and react",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --hot --progress --colors --port 8090",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Huang",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-core": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babel-loader": "^5.1.3",
+    "css-loader": "0.14.5",
+    "eslint": "^0.21.2",
+    "eslint-plugin-react": "^2.4.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.12.0",
+    "gulp-minify-css": "^1.1.3",
+    "gulp-uglify": "^1.2.0",
+    "http-server": "^0.8.0",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.2.0",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
+  },
+  "dependencies": {
+    "alt": "^0.16.10",
+    "react": "^0.13.3"
+  }
+}
