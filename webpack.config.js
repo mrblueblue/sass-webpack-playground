@@ -1,11 +1,16 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var prod_entry = ['./src/app.js'];
+var dev_entry = ['./src/app.js', 'webpack/hot/dev-server'];
+var entry = process.env.NODE_ENV === 'production' ? prod_entry : dev_entry;
+
 module.exports = {
 
   devtool: 'source-map',
-  entry: ['webpack/hot/dev-server', './src/app.js'],
+  entry: entry,
   output: {
     filename: 'bundle.js',
+    path: './dist/statics/', // for production
     publicPath: 'http://localhost:8090/assets'
   },
   module: {
