@@ -1,5 +1,4 @@
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");
-// var css = require("!raw!sass!./file.scss");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 
@@ -18,7 +17,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        loader: ExtractTextPlugin.extract(
+          // activate source maps via loader query
+          'css?sourceMap!' +
+          'sass?sourceMap'
+        )
       }
     ]
   },
@@ -27,7 +30,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  }
+  },
+  plugins: [
+    // extract inline css into separate 'styles.css'
+    new ExtractTextPlugin('styles.css')
+  ]
 
 }
 
